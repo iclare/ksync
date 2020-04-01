@@ -16,7 +16,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "tsdx test",
     "lint": "tsdx lint",
     "ksync": "./bin/index.js",
     "ksync:prod": "export NODE_ENV=production && yarn build && yarn ksync"

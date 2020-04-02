@@ -1,4 +1,6 @@
+import path from 'path';
 import sade from 'sade';
+import shell from 'shelljs';
 
 import bail from './bail';
 import parseFile from './parseFile';
@@ -7,8 +9,15 @@ process.on('unhandledRejection', bail);
 process.on('uncaughtException', bail);
 
 async function sync(filePath: string, repoPath: string) {
+  filePath = path.resolve(filePath);
+  repoPath = path.resolve(repoPath);
   const entries: Entry[] = await parseFile(filePath);
-  console.log(entries);
+  shell.cd(repoPath);
+  entries.forEach(entry => {
+    shell.mkdir('-p', path.dirname(entry.path));
+    const branch = entry.branch ? `-b ${entry.branch}` : '';
+    shell.exec(`git submodule add ${branch} ${entry.url} ${entry.path}`);
+  });
 }
 
 export async function main() {

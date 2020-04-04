@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "files": [
     "dist",
@@ -35,7 +35,7 @@
   "description": "Install a .gitmodules to your repo",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iclare/kitchen-sync.git"
+    "url": "git+https://github.com/iclare/ksync.git"
   },
   "keywords": [
     "typescript",
@@ -44,7 +44,7 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/iclare/kitchen-sync/issues"
+    "url": "https://github.com/iclare/ksync/issues"
   },
   "module": "dist/ksync.esm.js",
   "devDependencies": {

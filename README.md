@@ -1,23 +1,27 @@
-# kitchen-sync
+# ksync
 
 [kitchen-_sync_](https://www.merriam-webster.com/dictionary/kitchen-sink)
 
-Sync a .gitmodules with your repo.
+Install a .gitmodules to your repo
 
 ```console
-$ npx @iclare/kitchen-sync --h
+npx @iclare/ksync --h
+npx: installed 31 in 3.119s
 
   Description
     Install a .gitmodules to your repo
 
   Usage
-    $ kitchen-sync <filePath> <repoPath> [options]
+    $ ksync <filePath> <repoPath> [options]
 
   Options
+    --nobackup       Do not backup the repo
+    --force          Reuse existing submodules
     -v, --version    Displays current version
     -h, --help       Displays this message
 
   Examples
-    $ npx @iclare/kitchen-sync .gitmodules .
-    $ npx @iclare/kitchen-sync somefolder/.gitmodules anotherfolder
+    $ ksync .gitmodules .
+    $ ksync somefolder/.gitmodules anotherfolder
+
 ```
